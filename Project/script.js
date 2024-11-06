@@ -44,6 +44,7 @@ const accounts = [account1, account2];
 
 // Elements
 const labelWelcome = document.querySelector(".welcome");
+const testData = document.querySelector(".test-data");
 const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
 const labelSumIn = document.querySelector(".summary__value--in");
@@ -67,6 +68,8 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
+
+// let isLoggedIn = false;
 
 const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
@@ -178,6 +181,7 @@ const startLogoutTimer = function () {
       clearInterval(timer);
       labelWelcome.textContent = "Log in to get started";
       containerApp.style.opacity = 0;
+      testData.style.opacity = 100;
     }
 
     time--;
@@ -204,6 +208,7 @@ btnLogin.addEventListener("click", function (e) {
       currentAccount.owner.split(" ")[0]
     }`;
     containerApp.style.opacity = 100;
+    testData.style.opacity = 0;
 
     const now = new Date();
     const options = {
